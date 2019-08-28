@@ -12,7 +12,12 @@ namespace CalculatorOOP
         {
             // User runs the calculator they want to use
             int chosenCalculator = ChooseCalculator();
-            RunCalculator(chosenCalculator);
+
+            while (chosenCalculator != 3)
+            {
+                RunCalculator(chosenCalculator);
+                chosenCalculator = ChooseCalculator();
+            }
         }
 
         private static int ChooseCalculator()
@@ -49,8 +54,7 @@ namespace CalculatorOOP
         }
     }
     class Calculator
-    {
-        
+    {        
         public double firstNumber = 0;
         public double secondNumber = 0;
 
