@@ -145,12 +145,31 @@ namespace CalculatorOOP
         {
             return weightInKg / (heightInMeters * heightInMeters);
         }
-
         private void DisplayBMI(double BMI)
         {
             // Display users BMI
             Console.WriteLine("\nBMI = weight (kg) / [height (m)]^2 ");
             Console.WriteLine("\nYour BMI = " + BMI + "\n");
+        }
+
+        private void DisplayBMICategories()
+        {
+            // Display all BMI categories
+            Console.WriteLine("     BMI             |       BMI Category");
+            Console.WriteLine("Less than 15         | Very severely underweight");
+            Console.WriteLine("Between 15 and 16    | Severely underweight");
+            Console.WriteLine("Between 16 and 18.5  | Underweight ");
+            Console.WriteLine("Between 18.5 and 25  | Normal (healthy weight) ");
+            Console.WriteLine("Between 25 and 30    | Overweight ");
+            Console.WriteLine("Between 30 and 35    | Moderately obese ");
+            Console.WriteLine("Between 35 and 40    | Severely obese ");
+            Console.WriteLine("Over 40              | Very severely obese ");
+        }
+
+        private string CalculateUserBMICategory(double BMI)
+        {
+            // Declare variable to store the users BMI category
+            string BMICategory = "";
         }
     }
 }
