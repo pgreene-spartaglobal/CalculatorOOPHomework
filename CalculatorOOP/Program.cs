@@ -33,7 +33,7 @@ namespace CalculatorOOP
                     Console.WriteLine("You have chosen 'Simple Calculator'");
                     SimpleCalculator simpleCalc = new SimpleCalculator();
                     simpleCalc.GetInputValues(userSelection);
-                    
+                    simpleCalc.RunCalculator();
                     
                     break;
                 case 2:
@@ -77,40 +77,69 @@ namespace CalculatorOOP
     }
     class SimpleCalculator : Calculator
     {
-        // Could make RunCalculator a virtual method in the base class to be overriden in the child class
         public void RunCalculator()
         {
-            SelectOperation();
+            switch (SelectOperation())
+            {
+                case 1:
+                    DisplayResult(Add());
+                    break;
+                case 2:
+                    DisplayResult(Subtract());
+                    break;
+                case 3:
+                    DisplayResult(Multiply());
+                    break;
+                case 4:
+                    DisplayResult(Divide());
+                    break;
+                default:
+                    break;
+            }
+            
         }
 
-        public int SelectOperation()
+        private int SelectOperation()
         {
-            return 0;
+            // User selects the calculation method
+            Console.WriteLine("\nPlease Select the calculation you wish to perform:\n 1. Add \n 2. Subtract \n 3. Multiply \n 4. Divide\n");
+            Console.Write("Enter option (int): ");
+
+            return int.Parse(Console.ReadLine());
         }
 
-        public double Add()
+        private void DisplayResult(double result)
         {
-            return 0;
+            Console.WriteLine("Answer = " + result);
         }
-        public double Subtract()
+
+        private double Add()
         {
-            return 0;
+            return firstNumber + secondNumber;
         }
-        public double Multiply()
+        private double Subtract()
         {
-            return 0;
+            return firstNumber - secondNumber;
         }
-        public double Divide()
+        private double Multiply()
         {
-            return 0;
+            return firstNumber * secondNumber;
+        }
+        private double Divide()
+        {
+            return firstNumber / secondNumber;
         }
     }
 
     class BMICalculator : Calculator
     {
+        double heightInMeters = 0;
+        double weightInKg = 0;
+
         public void RunCalculator()
         {
-
+            heightInMeters = firstNumber;
+            weightInKg = secondNumber;
         }
     }
 }
