@@ -1,0 +1,14 @@
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\obj\Debug\BMICalculator.csproj.CoreCompileInputs.cache
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\bin\Debug\BMICalculator.exe.config
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\bin\Debug\BMICalculator.exe
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\bin\Debug\BMICalculator.pdb
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\obj\Debug\BMICalculator.exe
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\obj\Debug\BMICalculator.pdb
+C:\Users\Philip Greene\Engineering40\Week3\Day2\Calculator\BMICalculator\obj\Debug\BMICalculator.csprojAssemblyReference.cache
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\bin\Debug\BMICalculator.exe.config
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\bin\Debug\BMICalculator.exe
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\bin\Debug\BMICalculator.pdb
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\obj\Debug\BMICalculator.csprojAssemblyReference.cache
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\obj\Debug\BMICalculator.csproj.CoreCompileInputs.cache
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\obj\Debug\BMICalculator.exe
+C:\Users\Philip Greene\Engineering40\Week3\Day3\Calculator\BMICalculator\obj\Debug\BMICalculator.pdb
