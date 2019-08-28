@@ -165,11 +165,23 @@ namespace CalculatorOOP
             Console.WriteLine("Between 35 and 40    | Severely obese ");
             Console.WriteLine("Over 40              | Very severely obese ");
         }
-
         private string CalculateUserBMICategory(double BMI)
         {
             // Declare variable to store the users BMI category
             string BMICategory = "";
+
+            // Determine the users BMI category
+            if (BMI < 15) { BMICategory = "Very severely underweight"; }
+            else if (BMI >= 15 && BMI < 16) { BMICategory = "Severely underweight"; }
+            else if (BMI >= 16 && BMI < 18.5) { BMICategory = "Underweight"; }
+            else if (BMI >= 18.5 && BMI < 25) { BMICategory = "Normal (healthy weight)"; }
+            else if (BMI >= 25 && BMI < 30) { BMICategory = "Overweight"; }
+            else if (BMI >= 30 && BMI < 35) { BMICategory = "Moderately obese"; }
+            else if (BMI >= 35 && BMI <= 40) { BMICategory = "Severely obese"; }
+            else if (BMI > 40) { BMICategory = "Very severely obese"; }
+            else BMICategory = "Invalid";
+
+            return BMICategory;
         }
     }
 }
