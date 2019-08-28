@@ -13,11 +13,15 @@ namespace CalculatorOOP
             // User runs the calculator they want to use
             int chosenCalculator = ChooseCalculator();
 
+            // If the user chooses 3 then they wish to exit the program otherwise keep running calculators
             while (chosenCalculator != 3)
             {
                 RunCalculator(chosenCalculator);
                 chosenCalculator = ChooseCalculator();
+                Console.WriteLine("");
             }
+
+            Console.Read();
         }
 
         private static int ChooseCalculator()
@@ -37,13 +41,13 @@ namespace CalculatorOOP
             switch (userSelection)
             {
                 case 1:
-                    Console.WriteLine("You have chosen 'Simple Calculator'");
+                    Console.WriteLine("\nYou have chosen 'Simple Calculator'");
                     SimpleCalculator simpleCalc = new SimpleCalculator();
                     simpleCalc.GetInputValues(userSelection);
                     simpleCalc.RunCalculator();                    
                     break;
                 case 2:
-                    Console.WriteLine("You have chosen 'BMI Calculator'");
+                    Console.WriteLine("/nYou have chosen 'BMI Calculator'");
                     BMICalculator bmiCalc = new BMICalculator();
                     bmiCalc.GetInputValues(userSelection);
                     bmiCalc.RunCalculator();
@@ -114,7 +118,7 @@ namespace CalculatorOOP
 
         private void DisplayResult(double result)
         {
-            Console.WriteLine("Answer = " + result);
+            Console.WriteLine("Answer = " + result + "\n");
         }
 
         private double Add()
@@ -145,9 +149,13 @@ namespace CalculatorOOP
             double userBMI = CalculateBMI(firstNumber, secondNumber);
             DisplayBMI(userBMI);
 
+            DisplayAllBMICategories();
+
             // Calculate and display BMI category for user
             string userBMICategory = CalculateBMICategory(userBMI);
             DisplayUserBMICategory(userBMICategory);
+
+            Console.WriteLine("");
         }
 
         private double CalculateBMI(double heightInMeters, double weightInKg)
