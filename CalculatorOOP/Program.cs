@@ -11,15 +11,17 @@ namespace CalculatorOOP
         static void Main(string[] args)
         {
             // User runs the calculator they want to use
-            RunCalculator(ChooseCalculator());
+            int chosenCalculator = ChooseCalculator();
+            RunCalculator(chosenCalculator);
         }
 
         private static int ChooseCalculator()
         {
             // User makes their selection on whether they want to use the simple calculator or the BMI calculator
-            Console.WriteLine("Would you like to use the 'Simple Calculator' or the 'BMI Calculator'?");
+            Console.WriteLine("Would you like to use the 'Simple Calculator' or the 'BMI Calculator' or Exit?");
             Console.WriteLine("\tPress 1 for 'Simple Calculator'");
             Console.WriteLine("\tPress 2 for 'BMI Calculator'");
+            Console.WriteLine("\tPress 3 to Exit");
             Console.Write("Your option (int): ");
             int userSelection = int.Parse(Console.ReadLine());
             return userSelection;
@@ -46,7 +48,6 @@ namespace CalculatorOOP
             }
         }
     }
-
     class Calculator
     {
         
@@ -129,7 +130,6 @@ namespace CalculatorOOP
             return firstNumber / secondNumber;
         }
     }
-
     class BMICalculator : Calculator
     {
         double heightInMeters = 0;
@@ -137,8 +137,13 @@ namespace CalculatorOOP
 
         public void RunCalculator()
         {
+            // Calculate and display users BMI
             double userBMI = CalculateBMI(firstNumber, secondNumber);
             DisplayBMI(userBMI);
+
+            // Calculate and display BMI category for user
+            string userBMICategory = CalculateBMICategory(userBMI);
+            DisplayUserBMICategory(userBMICategory);
         }
 
         private double CalculateBMI(double heightInMeters, double weightInKg)
@@ -152,7 +157,7 @@ namespace CalculatorOOP
             Console.WriteLine("\nYour BMI = " + BMI + "\n");
         }
 
-        private void DisplayBMICategories()
+        private void DisplayAllBMICategories()
         {
             // Display all BMI categories
             Console.WriteLine("     BMI             |       BMI Category");
@@ -165,7 +170,7 @@ namespace CalculatorOOP
             Console.WriteLine("Between 35 and 40    | Severely obese ");
             Console.WriteLine("Over 40              | Very severely obese ");
         }
-        private string CalculateUserBMICategory(double BMI)
+        private string CalculateBMICategory(double BMI)
         {
             // Declare variable to store the users BMI category
             string BMICategory = "";
@@ -182,6 +187,11 @@ namespace CalculatorOOP
             else BMICategory = "Invalid";
 
             return BMICategory;
+        }
+
+        private void DisplayUserBMICategory(string userBMICategory)
+        {
+            Console.WriteLine("Your BMI Category is: " + userBMICategory);
         }
     }
 }
