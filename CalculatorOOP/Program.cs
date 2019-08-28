@@ -16,11 +16,12 @@ namespace CalculatorOOP
             // If the user chooses 3 then they wish to exit the program otherwise keep running calculators
             while (chosenCalculator != 3)
             {
-                RunCalculator(chosenCalculator);
+                CreateCalculator(chosenCalculator);
                 chosenCalculator = ChooseCalculator();
                 Console.WriteLine("");
             }
 
+            // End of program
             Console.Read();
         }
 
@@ -36,7 +37,8 @@ namespace CalculatorOOP
             return userSelection;
         }
 
-        private static void RunCalculator(int userSelection)
+        // Create and run the calculator the user wanted
+        private static void CreateCalculator(int userSelection)
         {
             switch (userSelection)
             {
@@ -62,6 +64,7 @@ namespace CalculatorOOP
         public double firstNumber = 0;
         public double secondNumber = 0;
 
+        // Read the inputs for the calculator
         public void GetInputValues(int userSelection)
         {
             switch (userSelection)
@@ -140,9 +143,6 @@ namespace CalculatorOOP
     }
     class BMICalculator : Calculator
     {
-        double heightInMeters = 0;
-        double weightInKg = 0;
-
         public void RunCalculator()
         {
             // Calculate and display users BMI
@@ -180,7 +180,7 @@ namespace CalculatorOOP
             Console.WriteLine("Between 25 and 30    | Overweight ");
             Console.WriteLine("Between 30 and 35    | Moderately obese ");
             Console.WriteLine("Between 35 and 40    | Severely obese ");
-            Console.WriteLine("Over 40              | Very severely obese ");
+            Console.WriteLine("Over 40              | Very severely obese\n");
         }
         private string CalculateBMICategory(double BMI)
         {
