@@ -33,13 +33,13 @@ namespace CalculatorOOP
                     Console.WriteLine("You have chosen 'Simple Calculator'");
                     SimpleCalculator simpleCalc = new SimpleCalculator();
                     simpleCalc.GetInputValues(userSelection);
-                    simpleCalc.RunCalculator();
-                    
+                    simpleCalc.RunCalculator();                    
                     break;
                 case 2:
                     Console.WriteLine("You have chosen 'BMI Calculator'");
                     BMICalculator bmiCalc = new BMICalculator();
                     bmiCalc.GetInputValues(userSelection);
+                    bmiCalc.RunCalculator();
                     break;
                 default:
                     break;
@@ -72,7 +72,6 @@ namespace CalculatorOOP
                 default:
                     break;
             }
-
         }
     }
     class SimpleCalculator : Calculator
@@ -138,8 +137,20 @@ namespace CalculatorOOP
 
         public void RunCalculator()
         {
-            heightInMeters = firstNumber;
-            weightInKg = secondNumber;
+            double userBMI = CalculateBMI(firstNumber, secondNumber);
+            DisplayBMI(userBMI);
+        }
+
+        private double CalculateBMI(double heightInMeters, double weightInKg)
+        {
+            return weightInKg / (heightInMeters * heightInMeters);
+        }
+
+        private void DisplayBMI(double BMI)
+        {
+            // Display users BMI
+            Console.WriteLine("\nBMI = weight (kg) / [height (m)]^2 ");
+            Console.WriteLine("\nYour BMI = " + BMI + "\n");
         }
     }
 }
