@@ -15,9 +15,11 @@ namespace CalculatorOOP
             {
                 case 1:
                     Console.WriteLine("You have chosen 'Simple Calculator'");
+                    SimpleCalculator simpleCalc = new SimpleCalculator();
                     break;
                 case 2:
                     Console.WriteLine("You have chosen 'BMI Calculator'");
+                    BMICalculator bmiCalc = new BMICalculator();
                     break;
                 default:
                     break;
