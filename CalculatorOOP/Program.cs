@@ -88,6 +88,7 @@ namespace CalculatorOOP
     }
     class SimpleCalculator : Calculator
     {
+        // Calculator will run the selected operation and display the result
         public void RunCalculator()
         {
             switch (SelectOperation())
